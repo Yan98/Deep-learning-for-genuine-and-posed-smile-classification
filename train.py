@@ -125,6 +125,7 @@ def train_BBC(epoch,lr,frame_path,frequency,batch_size,sub,file_name  = "bbc_tra
     
     # subjects
     a = list(range(20))
+    np.random.seed(12)
     np.random.shuffle(a)
     b = a[10:]
     a = a[:10]
@@ -167,20 +168,29 @@ def train_MMI(epoch,lr,label_path,frame_path,frequency,batch_size,sub,file_name 
     '''
     
     #subjects
-    fold  = ['50','36','29','49','30','48','41','42','32','54','58','57','56','60']
-    fold2 = ['47','37','21','53','40','35','1','46','2','44','55','34','61','45','5','39','3','33','43','59']               
-    fold3 = [] 
+    fold = [
+    ['54','21','46','2','34'],        
+    ['61','35','5','44','3'],        
+    ['55','49','45','37'],
+    ['60','48','41','42'],
+    ['53','32','1','40'],
+    ['59','43','47','39',],
+    ['56','50'],
+    ['57','33','30'],
+    ['58','36','29'],     
+    ]
+    
     label_path = "labels"    
-    for file,(tr,te) in enumerate([(fold+fold2,fold3),(fold2+fold3,fold),(fold+fold3,fold2)]): 
+    for name, file in enumerate(fold): 
         
-        params = {"fold": tr,
+        params = {"fold": set(np.concatenate(fold)).difference(set(file)),
                   "label_path": label_path,
                   "frame_path": frame_path,
                   "frequency" : frequency} #15
         dg = MMIDataGenerator(**params)
         training_generator = torch.utils.data.DataLoader(dg,batch_size=batch_size,shuffle=True)
         
-        params = {"fold": te,
+        params = {"fold": file,
                   "label_path": label_path,
                   "frame_path": frame_path,
                   "test": True,
@@ -188,7 +198,7 @@ def train_MMI(epoch,lr,label_path,frame_path,frequency,batch_size,sub,file_name 
         
         test_generator = torch.utils.data.DataLoader(MMIDataGenerator(**params),batch_size=32,shuffle=True)
         
-        train(epoch,lr,DeepSmileNet(re = sub),file_name,training_generator,test_generator,file)
+        train(epoch,lr,DeepSmileNet(re = sub),file_name,training_generator,test_generator,name)
         
         
         
