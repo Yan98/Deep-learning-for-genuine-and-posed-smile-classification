@@ -71,7 +71,12 @@ def loadframes(data_name,data,name,frequency,max_len):
     
     pad_x = np.zeros((max_len,3,48,48)) 
     for frame in files:
-        cur  = read_image(data, os.path.join(name,frame))
+        
+        try:
+            
+            cur  = read_image(data, os.path.join(name,frame))
+        except:
+            cur  = read_image(data, name+"/"+frame)
         cur = np.swapaxes(np.asarray(cur.resize((48,48))), 2, 0)
         values.append(cur)
         l+=1
