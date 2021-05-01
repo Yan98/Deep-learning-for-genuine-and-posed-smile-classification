@@ -8,23 +8,18 @@
 * torch 1.4.0 
 * torchvision 0.5.0 
 
-Note! The current version of code only tested on MacOS.
+Note, The current version of code only tested on MacOS.
 
-##########################################################################################
-##########################################################################################
+## Dataset
+* obtain the whole UVA-NEMO database from https://www.uva-nemo.org
+* obtain the whole MMI database from https://mmifacedb.eu
+* obtain the whole BBC database from https://www.bbc.co.uk/science/humanbody/mind/surveys/smiles/
+* obtain the whole SPOS database from https://www.oulu.fi/cmvs/node/41317
 
-obtain the whole UVA-NEMO database from https://www.uva-nemo.org
-obtain the whole MMI database from https://mmifacedb.eu
-obtain the whole BBC database from https://www.bbc.co.uk/science/humanbody/mind/surveys/smiles/
-obtain the whole SPOS database from https://www.oulu.fi/cmvs/node/41317
-
-##########################################################################################
-##########################################################################################
 The sample data is contained in processed_data folder
 
 
-##########################################################################################
-##########################################################################################
+## Train RealSmileNet
 test.py contains the test program for deep smile net. We do not provide the test program for model performance as it is time-consuming. Only the basic test are provided. run python test.py 
 
 ##########################################################################################
