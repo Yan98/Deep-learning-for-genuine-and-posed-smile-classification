@@ -1,5 +1,12 @@
-dependency: python 3.7, numpy 1.18.1, Pillow 7.0.0, dlib 19.19.0, opencv-python 4.2.0.32,
-torch 1.4.0, torchvision 0.5.0 
+# RealSmileNet pytorch Implementation
+##Dependency 
+* python 3.7
+* numpy 1.18.1 
+* Pillow 7.0.0 
+* dlib 19.19.0
+* opencv-python 4.2.0.32
+* torch 1.4.0 
+* torchvision 0.5.0 
 
 Note! The current version of code only tested on MacOS.
 
