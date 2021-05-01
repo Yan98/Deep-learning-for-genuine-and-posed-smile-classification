@@ -397,9 +397,9 @@ class SPOSDataGenerator(torch.utils.data.Dataset):
         files = [f for f in self.data_name[name] if f.endswith(".bmp") and f.replace(".bmp","").isnumeric()]
         files = sorted(files, key = lambda x : int(x.replace(".bmp","")))
 
-        last = [files[-1]] if len(files) % self.max_frame_number >= 2/3 * self.max_frame_number else []
+        last = [files[-1]] if len(files) % self.frequency >= 2/3 * self.frequency else []
         start = 0
-        files = np.concatenate([np.array(files)[start::self.max_frame_number],last])
+        files = np.concatenate([np.array(files)[start::self.frequency],last])
         
         l  = 0
         
