@@ -1,5 +1,5 @@
 # RealSmileNet pytorch Implementation
-##Dependency 
+## Dependency 
 * python 3.7
 * numpy 1.18.1 
 * Pillow 7.0.0 
@@ -7,8 +7,6 @@
 * opencv-python 4.2.0.32
 * torch 1.4.0 
 * torchvision 0.5.0 
-
-Note, The current version of code only tested on MacOS.
 
 ## Dataset
 * obtain the whole UVA-NEMO database from https://www.uva-nemo.org
@@ -53,6 +51,10 @@ DeepSmileNet training, optional arguments for demo.py :
 * data_preprocessin.py contains the function used to preprocess UVA-NEMO,BBC,SPOS and MMI database. The pre trained shape_predictor_68_face_landmarks model can be downloaded from http://dlib.net/files/ 
 
 * model.py contains the implementation of different model structures.
+
+## Notice
+* The current version of code only tested on MacOS.
+* We refactor the current implementation from our original training code. If you find any implementation error, please do not hesitate to contact us.
 
 ## License
 
