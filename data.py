@@ -353,10 +353,10 @@ class SPOSDataGenerator(torch.utils.data.Dataset):
             for f in os.listdir(file):
                 if not f.endswith(".bmp"):
                     continue
-            if file in self.data_name:
-                self.data_name[file].append(f)
-            else:
-                self.data_name[file] = [f]
+                if file in self.data_name:
+                    self.data_name[file].append(f)
+                else:
+                    self.data_name[file] = [f]
         
         self.max_len = max([len(list(i)) for i in self.data_name.values()])//frequency + 2
         

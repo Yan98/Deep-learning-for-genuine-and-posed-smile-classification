@@ -78,7 +78,7 @@ def train_SPOS(epoch,lr,frame_path,frequency,batch_size,sub,file_name  = "spos_t
         traind = dict()
         testd  = dict()
         for i in ["posed","spontaneous"]:
-            path = os.join(frame_path,i,"happy")
+            path = os.path.join(frame_path,i,"happy")
             
             for j in os.listdir(path):
                 
