@@ -55,6 +55,7 @@ DeepSmileNet training, optional arguments for demo.py :
 ## Notice
 * The current version of code only tested on MacOS.
 * We refactor the current implementation from our original training code. If you find any implementation error, please do not hesitate to contact us.
+* Code for domain adaptation will be added quickly.
 
 ## License
 
